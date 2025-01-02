@@ -20,6 +20,14 @@ function App() {
   const decreaseValue=()=>{
     setCounter(counter==0?0:counter-1);
   }
+
+  //however this is not the optimized method, but if in the interview, interviewer asked to do this
+  const addValueBy4 =() =>{
+    setCounter(prevCounter=> prevCounter+1);
+    setCounter(prevCounter=> prevCounter+1);
+    setCounter(prevCounter=> prevCounter+1);
+    setCounter(prevCounter=> prevCounter+1);
+  }
   
   return (
     <>
@@ -33,6 +41,10 @@ function App() {
       <button
       onClick={decreaseValue}
       >decrease value</button>
+            <br/><br/>
+      <button
+      onClick={addValueBy4}
+      >add value by 4</button>
     </>
   )
 }
