@@ -22,6 +22,7 @@ function App() {
       pass+=char
     }
     setPassword(pass)
+    console.log(pass)
     //setPassword is just for optimization
     // it is used for memoization process
   },[length,numberAllowed,charAllowed,setPassword])
@@ -32,6 +33,7 @@ function App() {
     passwordRef.current?.setSelectionRange(0,101)
     window.navigator.clipboard.writeText(password)
   },[password])
+
 
  useEffect(()=>{passwordGenerator()},[length,numberAllowed,charAllowed,passwordGenerator])
   return (
